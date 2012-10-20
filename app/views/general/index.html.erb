@@ -2,24 +2,32 @@
 <html>
   <head>
     <meta charset=utf-8>
-    <title>TextAngels</title>
+    <title>TextAngels - Teen Help Line over SMS</title>
+    <link rel="stylesheet" type="text/css" href="/assets/bootstrap_and_overrides.css">
+    <style type="text/css">
+      body { text-align: center; background-color: #fff; font-size: 20px; }
+      .header { background-color: #fff; padding: 10px 0; }
 
-    <%= stylesheet_link_tag "http://illanti.com/dump/textangels.css", :media => "all" %>
-    <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
-    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap.js"></script>
-    <script type="text/javascript" src="/assets/facebook.js"></script>
+      h1 { font-size: 6em; line-height: 1.5; color: white; background-color: #1B1B1B; border-radius: 5px; }
+      h2 { font-size: 4em; line-height: 1.5em; color: #E23F27; }
+    </style>
   </head>
   <body>
-    <div class="header">
-        <img class="image img-rounded" src="/assets/logo.png" alt="placeholder image" height="94" width="363">
-    </div>
-    <h2>GET HELP NOW, TEXT:</h2>
-    <h1>(310) 321-4265</h1>
-    <h3>Anonymously discuss emotionally sensitive issues with TextAngels</h3>
+    <div class="container-fluid">
+      <div class="header">
+        <img class="image img-rounded" src="/assets/logo.png" alt="TextAngels.org" height="94" width="363">
+      </div>
+      <h2>GET HELP NOW, TEXT:</h2>
+      <h1>(310) 321-4265</h1>
+      <h3>Anonymously discuss emotionally sensitive issues with TextAngels</h3>
 
-    <div class="well" style="margin-top: 100px;">
-      <p>Would you like to be an angel?</p>
-      <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+      <div class="well" style="margin-top: 100px;">
+        <p>Would you like to be an angel?</p>
+        <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+      </div>
     </div>
+    <script type="text/javascript" src="/assets/jquery.js"></script>
+    <script type="text/javascript" src="/assets/twitter/bootstrap.js"></script>
+    <script type="text/javascript" src="/assets/facebook.js"></script>
   </body>
 </html>
