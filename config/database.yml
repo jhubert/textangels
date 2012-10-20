@@ -1,0 +1,18 @@
+common: &common
+  adapter: postgresql
+  host: localhost
+  username:
+  password:  # from psql setup, see Postgresql
+  timeout: 5000
+
+development:
+  <<: *common
+  database: textangels
+
+test:
+  <<: *common
+  database: textangels_test
+
+production:
+  <<: *common
+  database: textangels_production

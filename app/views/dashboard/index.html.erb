@@ -1,0 +1,38 @@
+<h1>Dashboard</h1>
+
+<% if @inbound_messages.size > 0 %>
+  <h2>New People Needing Help</h2>
+  <% @inbound_messages.each do |im| %>
+    <div class="well">
+      <strong>Incoming request from <%= im.person.city %> (<%= im.person.key %>)</strong>
+      <p>"<%= im.message %>" <small>- <%= im.created_at %></small></p>
+      <%= form_for Message.new do |f| %>
+        <%= hidden_field_tag :inbound_message_id, im.id %>
+        <%= f.text_area :body, :rows => 3 %>
+        <%= submit_tag 'Respond' %>
+      <% end %>
+    </div>
+  <% end %>
+<% end %>
+
+<% if @conversations.size > 0 %>
+  <h2>Conversations</h2>
+
+  <% @conversations.each do |conversation| %>
+    <div class="well conversation">
+      <h3>With <%= conversation.person.city %> (<%= conversation.person.key %>)</h3>
+      <div class="pull-right">
+        <button class="btn btn-warning">Call Them</button>
+        <button class="btn">Archive</button>
+      </div>
+      <% conversation.messages.each do |m| %>
+        <p><strong><%= m.from_type == 'Person' ? 'Them' : 'You' %>:</strong> <%= m.body %></p>
+      <% end %>
+      <%= form_for Message.new do |f| %>
+        <%= hidden_field_tag :conversation_id, conversation.id %>
+        <%= f.text_area :body, :rows => 3 %>
+        <%= submit_tag 'Respond', :class => 'btn btn-success' %>
+      <% end %>
+    </div>
+  <% end %>
+<% end %>

@@ -1,0 +1,8 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  person_id: 1
+  user_id: 1
+  person_phone: +1111111111
+  user_phone: +2222222222
+  active: true

@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset=utf-8>
+    <title>TextAngels</title>
+
+    <%= stylesheet_link_tag "http://illanti.com/dump/textangels.css", :media => "all" %>
+    <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/assets/facebook.js"></script>
+  </head>
+  <body>
+    <div class="header">
+        <img class="image img-rounded" src="/assets/logo.png" alt="placeholder image" height="94" width="363">
+    </div>
+    <h2>GET HELP NOW, TEXT:</h2>
+    <h1>(310) 321-4265</h1>
+    <h3>Anonymously discuss emotionally sensitive issues with TextAngels</h3>
+
+    <div class="well" style="margin-top: 100px;">
+      <p>Would you like to be an angel?</p>
+      <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+    </div>
+  </body>
+</html>

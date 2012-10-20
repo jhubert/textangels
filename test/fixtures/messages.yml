@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  conversation_id: 1
+  from_phone: +1111111111
+  body: This is a message from a person
+
+two:
+  conversation_id: 1
+  from_phone: +2222222222
+  body: This is a message from an angel
