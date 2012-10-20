@@ -1,12 +1,8 @@
 class GeneralController < ApplicationController
+  layout false
   before_filter :redirect_if_current_user
 
   def index
-    render :layout => false
-  end
-
-  def about
-    render :layout => false
   end
 
   private
